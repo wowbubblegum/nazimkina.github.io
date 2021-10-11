@@ -2,3 +2,12 @@ h1 {font-family: Arial; color: aqua;}
 h1{background-color: blanchedalmond;}
 body {background-color: cadetblue;}
 header{background-color: cornsilk;}
+.header_wrapper{display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;} 
+/*.header_nav{display: flex; flex-wrap: wrap;}*/
+.header_logo{flex-basis: 20%;}
+.header_menu{display: flex;flex-wrap: wrap;}
+.header_item{margin-right: 30px;  border-width: 5px; text-decoration: none; border-left-style: solid;}
+.footer_wrapper{display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;}
+.footer_logo{margin-right: 30px; border-width: 5px;}
+
+    
