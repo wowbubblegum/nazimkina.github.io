@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet"> 
+    <style>
+
+  .smallp{
+      padding: 14px;
+  }
+
+        .block{
+    width: 400px;
+    height: 400px;
+    margin-left:  auto; 
+    margin-right: auto;
+    background-size: cover;
+   
+}
+.container{
+    max-width: 1000px;
+    text-align: center;
+    background: honeydew;
+    color: hotpink;
+    margin: 0 auto ; /* для центровки */
+    padding: 100px 50px; /* отступы внутри между картинками*/
+}
+.container1{
+    max-width: 1200px;
+    text-align: center;
+    background: rgb(233, 141, 148);
+    color: rgb(124, 131, 106);
+    margin: 30px auto ; /* для центровки */
+    padding: 30px; /* отступы внутри между картинками*/
+}
+.slider{
+    border: 3px solid rgb(150, 181, 240); /*solid - непрерывная граница*/
+    width: 256px;
+    height: 256px;
+    margin: 20px auto ;
+    overflow: hidden;
+    
+
+}
+.slider-line{
+width: 1024px; /*ширина 4 картинок ниже*/
+height: 256px;
+display: flex;
+background: rgb(209, 255, 134);
+position: relative;
+left: 0;
+transition: all ease 1s;
+}
+.mini{
+    width: 256px;
+    height: 256px;
+}
+    
+        .item{display: block;
+
+    margin-left: auto;
+    margin-right: auto}
+        p{
+            text-align: center;
+        }
+    
+        .main{display: grid;
+    grid-template-columns: repeat(2,1fr)
+            
+
+        }
+        main{
+            height: 3200px;
+          }
+    .bloc{
+        width: 400px;
+            height: 600px;
+            border: 2px solid rgb(95, 85, 73);
+            border-radius: 50px;
+            padding: 65px;
+            grid-column: span 1;
+            margin: 100px;
+            box-shadow: 1px 1px 6px 3px rgb(109, 108, 106);
+            
+            
+           }
+    
+        /*body { 
+    font-family: 'Bona Nova';
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "left middle right"
+    "footer footer footer";
+  grid-template-rows: 60px 1fr 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100vh;
+  }*/
+
+
+ .flex-col
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+/*.border_div
+{
+    border: solid 1px #cc00ff;
+    border-radius: 100px;
+    padding: 50px;
+    margin: 20px;
+    box-shadow: 1px 1px 6px 3px #cc00ff;
+}
+                                                           /* класс можно разделить на .flex-col и  .border_div*/
+                                                          
+.middle { 
+  grid-area: middle;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+   
+    padding: 50px;
+    margin: 20px;
+    
+   
+}    
+.left { 
+  grid-area: left; 
+  }
+.right{ 
+    grid-area: right; 
+  }
+
+.form-div
+{
+    padding-bottom: 5px;
+}
+.flex-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.align-center
+{
+    text-align: center;
+}
+.input-text
+{
+    border-radius: 10px;
+    background-color: #3e9bc0;
+    border-color: #f28a31;
+    width: 160px;
+    height: 30px;
+}
+
+    </style>
+    <script>
+        function checkForm () {
+
+        
+        console.log("Проверка");
+
+        var name =document.getElementById('name').value;
+        console.log(name);
+        var fail="";
+        var viv=name.value + " " + email.value + " " + tel.value;
+        var tel = document.getElementById('tel');
+        if (name=="" ||email==""||tel=="") 
+            fail="Заполните все поля";
+        else if(name.length<=1|| name.length>30)
+            fail="Введите корректное имя";
+        else if(tel.length>10)
+             fail="Некорректный номер телефона";
+             
+            
+        
+         if (fail !=""){
+        
+            document.getElementById('error').innerHTML=fail;
+            
+        } else{
+            document.getElementById('vivod').innerHTML=viv;
+            
+            
+        }
+
+       return false;
+
+        
+    }
+    
+    </script>
+
+    <script>
+        function fanc(){
+            document.getElementById('posta').checked=true;
+            document.getElementById('tel').checked=true;
+            document.getElementById('nootv').checked=true;
+        }
+    </script>
+    
+    
+    
+</head>
+<body>
+   
+    <header>
+        <div class="header_wrapper"> 
+            <div class="header_logo"><a href="../example.html"> <img src="../images/logo.png" alt="Лого" height="100" weight="100">   </a></div> 
+          
+              
+              <nav class="header_nav">
+                  <ul class="header_menu">
+                       <li class="header_item"> <a href="../example.html"> О себе </a> </li>
+                      <li class="header_item"> <a href="../pages/resume.html"> Резюме </a></li>
+                      <li class="header_item"> <a href="../pages/portfolio.html"> Портфолио </a> </li>
+                      <li class="header_item"> <a href="../example.html#jak"> Компетенции </a> </li>
+                      <li class="header_item"><a href="../pages/contacts.html"> Контакты </a></li>
+                      <li class="header_item"> <a href="../pages/js.html">Java Script</a></li>
+                  </ul>
+              </nav>
+              
+          
+           
+          </div>
+          <div class="header-preview">
+              <h2> Веб технологии</h2>
+              <h2>Университет Дубна</h2>
+          </div>
+        </header>
+    
+    <main>  <!--основное содержание-->
+        <div >
+        <div>Выберите цветовую схему</div>
+        <select name="" id="theme">
+            <option value="auto"> по умолчанию </option>
+            <option value="light"> светлая </option>
+            <option value="dark"> тёмная </option>
+        </select>
+        <script>
+            function applyTheme(theme){
+            document.body.classList.remove("theme-auto", "theme-light", "theme-dark" );
+            document.body.classList.add(`theme-${theme}`);
+            }
+            document.addEventListener("DOMContentLoaded" , () =>{ 
+                document.querySelector("#theme").addEventListener("change", function() {
+                    applyTheme(this.value);
+
+                });
+            });
+            document.addEventListener("DOMContentLoaded" , () =>{
+                const savedTheme = localStorage.getItem("theme") || "auto";
+                applyTheme(savedTheme); 
+                for (const optionElement of document.querySelectorAll("#theme option")){
+                    optionElement.selected = savedTheme === optionElement.value; /* для сравнения либо два раза либо три раза используем =. Два равно -  элементы одного типа. В локал сторож используем три знака равно, потому что локал стораж сравнивает в независимости от элемент */
+
+                }
+                document.querySelector("#theme").addEventListener ("change" , function () {
+                    localStorage.setItem("theme", this.value);
+                    applyTheme (this.value);
+                });
+            } );
+
+        </script>
+        <div class="main">
+        <section class="bloc">
+            <div class="left"></div>
+        <div class="middle"> 
+             <form action="" method="get" id="form1" onsubmit=" return checkForm(this)" > 
+            <div class="form-div" id="svaz">
+                <div>Как вам удобно получить ответ?</div>
+                <label for=""> <input type="radio" id="posta" value="по почте">  по почте </label> <br>
+                <label for=""> <input type="radio" id="tel" value="по телефону"> по телефону </label> <br>
+                <label for=""> <input type="radio" id="nootv" value="не отвечать"> не отвечать </label> <br>
+            </div>
+            <div class="form-div">
+                <label for="theme"> Укажите тему вопроса </label>
+                <select name="theme" id="theme" class="input-text">
+                    <option value="">работа</option>
+                    <option value="">сотрудничество</option>
+                    <option value="">личное</option>
+    
+                </select>
+            </div>
+            <div class="form-div">
+                <div>Ещё один вопрос ?</div>
+                <label for="checkbox1"> <input type="checkbox" id="checkbox1" name=""> может так </label> <br>
+                <label for="checkbox2"> <input type="checkbox" id="checkbox2" name=""> или так</label> <br>
+                <label for="checkbox3"> <input type="checkbox" id="checkbox3" name=""> или вот так </label> <br>
+            </div>
+            <div class="form-div">
+                <label for="name" class="flex-row"> Ваше имя</label>
+                <input type="text" name="name" id="name" class="input-text" >
+    
+            </div>
+            <div class="form-div" id="email1" >
+                <label for="email" class="flex-row"> Адрес почты</label>
+                <input type="email" name="email" id="email" class="input-text" >
+    
+            </div>
+            <div class="form-div" id="tel1" >
+                <label for="tel" class="flex-row" > Телефон</label>
+                <input type="tel" name="tel" id="tel" class="input-text" >
+    
+            </div>
+            <div class="form-div">
+                <div>Задайте свой вопрос</div>
+                <div>
+                    <textarea  cols="30" ></textarea>
+                </div>
+    
+                
+    
+            </div>
+            <div class="align-center">
+                <input type="submit" value="отправить вопрос" class="input-text">
+            </div>
+            <div id="error" style="color: crimson;"> </div>
+            <div id="vivod" style="color: darkviolet;"></div>
+    
+        </form>
+        
+    </div>
+     <div class="right"></div>
+    </section>
+    <section class="bloc"> 
+        <div class="noselect">
+            <p>Котики <br>
+                Котики <br>
+                Котики <br>
+                Котики <br>
+                Котики <br>
+                Котики <br>
+                КОТЫ   <br>
+            </p>
+            <img width="400" class="item" src="../images/сat.png" alt="">
+        </div>
+   
+</section>
+<section class="bloc">
+    
+    <div class="block">  </div>
+    <script>
+        var arr=['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'],
+        block=document.querySelector('.block'),
+        i=0;
+        block.onclick=boo;
+        boo();
+        function boo(){
+            block.style.backgroundImage='url(../images/'+arr[i]+')';
+            i++;
+            if (i==arr.length){
+                i=0;
+            }
+        }
+
+    </script>
+    
+</section>
+<section class="bloc"> 
+    
+        <div class="block">
+            <div id="big">
+                <img src="../images/1.jpg" alt="" id="bigp" class="" height="400" width="400">
+            </div>
+            <div>
+                <img src="../images/2.jpg" alt="" class="smallp" width="100" >
+                <img src="../images/3.jpg" alt="" class="smallp" width="100">
+                <img src="../images/4.jpg" alt="" class="smallp" width="100">
+            </div>
+            <script>
+         let el= document.getElementsByClassName('smallp');
+         console.log(el);
+         for (i=0; i < el.length; ++i){
+             el[i].onclick= pic
+         }
+          function pic(enebt){
+              x=document.getElementById('bigp');
+              console.log(event.target); 
+              x.src = event.target.src;
+
+          }
+
+            </script>
+        </div>
+    </section>
+    <section class="bloc">
+        <section class="main form"> <!---->
+            <textarea name="" id="textArea" cols="30" rows="30"> </textarea> <br>
+            <button> Очистить </button>
+            <script>
+                document.getElementById("textArea").oninput=function text (){
+                    localStorage.setItem('savetext' , document.getElementById("textArea").value);
+                    console.log(localStorage.getItem('savetext'));
+                }
+                document.getElementById("textArea").value=localStorage.getItem('savetext');
+            </script>
+        </section> 
+        <section class="main-form">
+            
+        </section>
+        
+        <section class="main-form">
+            <div class="noselect">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam illum dolorum, quibusdam magni repellat ut rerum, consectetur sint omnis itaque quasi delectus tempora repudiandae fugiat facilis reprehenderit excepturi eos sequi.
+            </div>
+            <div>
+                <img src="../nazimkina.github.io-main/images/5.jpg" alt="">
+            </div>
+        </section> 
+        
+    </section>
+ 
+   
+    </div>
+
+
+
+</div>
+
+    
+
+        
+    
+        
+       
+    </main>
+    <footer>
+    
+          <div class="footer_wrapper">
+ <p class="footer-logoall">
+      <a class="footer_logo" href="https://vk.com/unidubna_official"  > <img src="../images/vk.png"  alt="" width="50"></a>
+      <a class="footer_logo" href="https://www.instagram.com/unidubna_official/"> <img src="../images/instagram.png" alt="" width="50"></a>
+      <a class="footer_logo" href="https://www.youtube.com/c/ТВГУД"> <img src="../images/youtube.png" alt="" width="50"></a>
+</p>     
+      
+        <p  class="footer-text">
+          Сайт разработан "программисткой" Катей, Coppyright 2021</p>   
+        
+     
+    </footer>
+    <script>
+    document.getElementById('svaz').addEventListener("click",hiddenClose);
+    function  hiddenClose () {
+        let x=document.getElementById('tel1');
+        let y= document.getElementById('email1');
+        if (document.getElementById('posta').checked){
+            y.style.visibility='visible';
+
+        } else{
+            y.style.visibility='hidden';
+        }
+        if (document.getElementById('tel').checked){
+            x.style.visibility='visible';
+        } else{
+            x.style.visibility='hidden';
+        }
+    }
+</script>
+  
+    
+</body>
+</html>

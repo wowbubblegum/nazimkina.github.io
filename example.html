@@ -6,40 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet"> 
+    <style>
+     .item{
+         border: solid papayawhip; border-radius: 50px;
+     }
+    </style>
 </head>
 <body>
     <header>
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="example.html"> <img src="images/logo.png" alt="Лого" height="100" weight="100">   </a>
-                    </li>
-                    <li> <a href="pages/aboutme.html"> О себе </a> </li>
-                    <li> <a href="pages/resume.html"> Резюме </a></li>
-                    <li> <a href="pages/portfolio.html"> Портфолио </a> </li>
-                    <li> <a href="pages/competencies.html"> Компетенции </a> </li>
-                    <li><a href="pages/contacts.html"> Контакты </a></li>
+       <div class="header_wrapper"> 
+          <div class="header_logo"><a href="example.html"> <img src="images/logo.png" alt="Лого" height="100" weight="100">   </a></div> 
+        
+            
+            <nav class="header_nav">
+                <ul class="header_menu">
+                     <li class="header_item"> <a  class="a_underline" href="../nazimkina.github.io-main/example.html"> О себе </a> </li>
+                    <li class="header_item"> <a class="a_underline"  href="pages/resume.html"> Резюме </a></li>
+                    <li class="header_item"> <a  class="a_underline" href="pages/portfolio.html"> Портфолио </a> </li>
+                    <li class="header_item"> <a class="a_underline"  href="example.html#jak"> Компетенции </a> </li>
+                    <li class="header_item"><a  class="a_underline" href="pages/contacts.html"> Контакты </a></li>
+                    <li class="header_item"> <a class="a_underline"  href="pages/js.html">Java Script</a></li>
                 </ul>
             </nav>
             
+        
+         
         </div>
-        <h1> Веб-технологии </h1> 
+        <div class="header-preview">
+            <h2> Веб технологии</h2>
+            <h2>Университет Дубна</h4>
+        </div>
     </header>
-    <article>
-        <p>ghigyui
-            Привлекательность Web-технологий как средства доставки информации во многом определяет универсальный интерфейс между человеком и компьютером. Каждому человеку понятны надписи, заголовки, ссылки, картинки. Веб-интерфейс как средство доступа к информации интуитивно понятен. Следствием простоты веб-интерфейса является широкое употребление Интернета как канала коммуникации. Браузер -программа для просмотра веб-страниц и работы с информацией в веб-интерфейсе. Браузеры -программы, которыми обеспечены все современные компьютеры большое число так называемых «гаджетов». Теоретически все браузеры должны отображать все сайты, сделанные по стандартам, одинаково. Практически имеется множество тонкостей и сложностей. Наиболее популярные браузеры: Internet Explorer, Firefox, Opera, Safari, Chrome. 
-        </p>
-    </article>
+    <main>  <!--основное содержание-->
+        <section> <!---->
+            <h1  > Почему важно привлекательно выглядеть?</h1>
+            <div class="wrapper">
+                <p class="item"> Все наверняка слышали о стиле, но не все до конца понимают, что это такое и зачем это нужно. Дело в том, что люди делают выводы о нас, о нашей жизни и предпочтениях исходя из нашего внешнего вида. ... Кроме того, стиль должен нести в себе индивидуальность, то есть подчеркивать свойства человека, который создал свой образ.</p>
+            
+         <img class="item" src="images/1.jpg" alt="">
+        </div>
+        </section> 
+        <section class="polosa">
+            <a name ="jak"> </a> <!--Мы создали якорь, чтобы при нажатии на какой то пункт нас отбрасывало в эту секцию-->
+            <h1> Топ 3 моих любимых места подбора одежды</h1>
+             
+           
+            <div class="html-cards">
+                <div class="cards">
+                    <img src="images/2.jpg" alt="" width="350" height="400">
+                     <h3> Из пинтереста</h3>
+                </div>
+                <div class="cards">
+                    <img src="../nazimkina.github.io-main/images/3.jpg" alt="" width="350" height="400" >
+                    <h3>Из инстаграмма</h3>
+                </div>
+                <div class="cards">
+                        <img src="../nazimkina.github.io-main/images/4.jpg" alt="" width="350" height="400">
+                     <h3>Из вконтакте</h3>
+                </div>
+                
+            </div>
+        
+        </section>
+
+        <section>
+            <div class="ul">
+                <div class="onestul">
+                    <h3> Плюсы быть стильным:</h3>
+                    <ul>
+                        <li> Уверенность в себе</li>
+                        <li> Актуальность</li>
+                        <li> Эстетичность</li>
+                    </ul>
+                </div>
+                <div class="onestul">
+                    <h3> Минусы быть стильным:</h3>
+                  <ul>
+                      <li>  Привередливость</li>
+                      <li>Зависимость от моды</li>
+                      <li>Расстраты </li>
+                  </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="polosa">
+            <h1> Как изменить свой стиль?</h1>
+            <p> Изменить стиль не так уже и сложно, если рядом есть специалист. Нажмите на кнопку, чтобы перейти к консультанту</p>
+            
+            <button onclick=""> Связаться с консультантом</button>
+        </section>
+    </main>
     <footer>
-      <a href="https://vk.com/unidubna_official" > <img src="images/vk.png" alt="Вконтакте" height="50" width="50"></a>
-      <a href="https://www.instagram.com/unidubna_official/"> <img src="images/instagram.jpg" alt="Инстаграмм" height="50" width="50"></a>
-      <a href="https://www.youtube.com/c/ТВГУД"> <img src="images/youtube.png" alt="Ютуб" height="50" width="50"></a>
-      <p>
-          Сайт разработан "программисткой" Катей, Coppyright 2021
-      </p>
+        <div class="footer_wrapper">
+ <p class="footer-logoall">
+      <a class="footer_logo" href="https://vk.com/unidubna_official"  > <img src="images/vk.png"  alt="" width="50"></a>
+      <a class="footer_logo" href="https://www.instagram.com/unidubna_official/"> <img src="../nazimkina.github.io-main/images/instagram.png" alt="" width="50"></a>
+      <a class="footer_logo" href="https://www.youtube.com/c/ТВГУД"> <img src="../nazimkina.github.io-main/images/youtube.png" alt="" width="50"></a>
+</p>     
+      
+        <p  class="footer-text">
+          Сайт разработан "программисткой" Катей, Coppyright 2021</p>   
+        
+     
     </footer>
     
     
 </body>
 </html>
+
+      
+   
+    
+    
+

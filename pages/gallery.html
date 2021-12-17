@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Галерея</title>
+    <style>
+.block{
+    width: 600px;
+    height: 400px;
+    border: 2px solid  rgb(206, 119, 233);
+    margin: 0 auto;
+    background-size: cover;
+}
+.container{
+    max-width: 1000px;
+    text-align: center;
+    background: honeydew;
+    color: hotpink;
+    margin: 0 auto ; /* для центровки */
+    padding: 100px 50px; /* отступы внутри между картинками*/
+}
+.container1{
+    max-width: 1200px;
+    text-align: center;
+    background: rgb(233, 141, 148);
+    color: rgb(124, 131, 106);
+    margin: 30px auto ; /* для центровки */
+    padding: 30px; /* отступы внутри между картинками*/
+}
+.slider{
+    border: 3px solid rgb(150, 181, 240); /*solid - непрерывная граница*/
+    width: 256px;
+    height: 256px;
+    margin: 20px auto ;
+    overflow: hidden;
+    
+
+}
+.slider-line{
+width: 1024px; /*ширина 4 картинок ниже*/
+height: 256px;
+display: flex;
+background: rgb(209, 255, 134);
+position: relative;
+left: 0;
+transition: all ease 1s;
+}
+.mini{
+    width: 256px;
+    height: 256px;
+}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="block">  </div>
+        <script>
+            var arr=['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'],
+            block=document.querySelector('.block'),
+            i=0;
+            block.onclick=boo;
+            boo();
+            function boo(){
+                block.style.backgroundImage='url(../images/'+arr[i]+')';
+                i++;
+                if (i==arr.length){
+                    i=0;
+                }
+            }
+
+        </script>
+    </section>
+    <section>
+        <div class="container">
+            <div id="big">
+                <img src="../images/1.jpg" alt="" id="bigp" class="" width="900">
+            </div>
+            <div>
+                <img src="../images/2.jpg" alt="" class="smallp" width="300" >
+                <img src="../images/3.jpg" alt="" class="smallp" width="300">
+                <img src="../images/4.jpg" alt="" class="smallp" width="300">
+            </div>
+            <script>
+         let el= document.getElementsByClassName('smallp');
+         console.log(el);
+         for (i=0; i < el.length; ++i){
+             el[i].onclick= pic
+         }
+          function pic(enebt){
+              x=document.getElementById('bigp');
+              console.log(event.target); 
+              x.src = event.target.src;
+
+          }
+
+            </script>
+        </div>
+    </section>
+    <section>
+        <div class="container1">
+            <div class="slider">
+                <div class="slider-line">
+                    <img src="../images/1.jpg" alt="" class="mini">
+                    <img src="../images/2.jpg" alt="" class="mini">
+                    <img src="../images/3.jpg" alt="" class="mini">
+                    <img src="../images/4.jpg" alt="" class="mini">
+
+                </div>
+
+            </div>
+            <button class="slider-prev">Назад</button>
+            <button class="slider-next">Вперёд</button>
+        </div>
+        <script>
+            let offset=0;
+            const sliderLine=document.querySelector('.slider-line');
+            document.querySelector('.slider-next').addEventListener('click', function () {
+                offset=offset+256;
+                if (offset>768){ /* сравниваем офф сет с длинной трёх картинок, чтоб возвращать картинки*/
+               offset=0;
+                } 
+                sliderLine.style.left=-offset+ 'px';
+            })
+            document.querySelector('.slider-prev').addEventListener('click', function () {
+                offset=offset-256;
+                if (offset<0){ 
+               offset=768;
+                } 
+                sliderLine.style.left=-offset+ 'px';
+            })
+            
+            
+
+        </script>
+    </section>
+</body>
+</html>
