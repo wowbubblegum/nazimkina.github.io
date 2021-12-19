@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Java Script </title>
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet"> 
     <style>
+      
 
   .smallp{
       padding: 14px;
@@ -21,24 +22,18 @@
     background-size: cover;
    
 }
-.container{
-    max-width: 1000px;
-    text-align: center;
-    background: honeydew;
-    color: hotpink;
-    margin: 0 auto ; /* для центровки */
-    padding: 100px 50px; /* отступы внутри между картинками*/
-}
+
+
 .container1{
     max-width: 1200px;
     text-align: center;
-    background: rgb(233, 141, 148);
+   
     color: rgb(124, 131, 106);
     margin: 30px auto ; /* для центровки */
     padding: 30px; /* отступы внутри между картинками*/
 }
 .slider{
-    border: 3px solid rgb(150, 181, 240); /*solid - непрерывная граница*/
+    border: 3px solid rgb(125, 159, 223); /*solid - непрерывная граница*/
     width: 256px;
     height: 256px;
     margin: 20px auto ;
@@ -79,12 +74,12 @@ transition: all ease 1s;
     .bloc{
         width: 400px;
             height: 600px;
-            border: 2px solid rgb(95, 85, 73);
+            border: 2px solid rgb(20, 33, 51);
             border-radius: 50px;
             padding: 65px;
             grid-column: span 1;
             margin: 100px;
-            box-shadow: 1px 1px 6px 3px rgb(109, 108, 106);
+            box-shadow: 1px 1px 6px 3px rgb(113, 211, 224);
             
             
            }
@@ -156,8 +151,8 @@ transition: all ease 1s;
 .input-text
 {
     border-radius: 10px;
-    background-color: #3e9bc0;
-    border-color: #f28a31;
+    background-color: #97c7e7;
+    border-color: #d8e0df;
     width: 160px;
     height: 30px;
 }
@@ -215,17 +210,17 @@ transition: all ease 1s;
    
     <header>
         <div class="header_wrapper"> 
-            <div class="header_logo"><a href="../example.html"> <img src="../images/logo.png" alt="Лого" height="100" weight="100">   </a></div> 
+            <div class="header_logo"><a href="../index.html"> <img src="../images/logo.png" alt="Лого" height="100" weight="100">   </a></div> 
           
               
               <nav class="header_nav">
                   <ul class="header_menu">
-                       <li class="header_item"> <a href="../example.html"> О себе </a> </li>
-                      <li class="header_item"> <a href="../pages/resume.html"> Резюме </a></li>
-                      <li class="header_item"> <a href="../pages/portfolio.html"> Портфолио </a> </li>
-                      <li class="header_item"> <a href="../example.html#jak"> Компетенции </a> </li>
-                      <li class="header_item"><a href="../pages/contacts.html"> Контакты </a></li>
-                      <li class="header_item"> <a href="../pages/js.html">Java Script</a></li>
+                       <li class="header_item"> <a class="a_underline" href="../index.html"> О себе </a> </li>
+                      <li class="header_item"> <a  class="a_underline" href="../pages/resume.html"> Резюме </a></li>
+                      <li class="header_item"> <a class="a_underline" href="../pages/portfolio.html"> Портфолио </a> </li>
+                      <li class="header_item"> <a class="a_underline"  href="../index.html#jak"> Компетенции </a> </li>
+                      <li class="header_item"><a  class="a_underline" href="../pages/contacts.html"> Контакты </a></li>
+                      <li class="header_item"> <a class="a_underline" href="../pages/js.html">Java Script</a></li>
                   </ul>
               </nav>
               
@@ -238,7 +233,7 @@ transition: all ease 1s;
           </div>
         </header>
     
-    <main>  <!--основное содержание-->
+<main>  <!--основное содержание-->
         <div >
         <div>Выберите цветовую схему</div>
         <select name="" id="theme">
@@ -348,20 +343,41 @@ transition: all ease 1s;
 </section>
 <section class="bloc">
     
-    <div class="block">  </div>
+    <div class="container1">
+        <div class="slider">
+            <div class="slider-line">
+                <img src="../images/1.jpg" alt="" class="mini">
+                <img src="../images/2.jpg" alt="" class="mini">
+                <img src="../images/3.jpg" alt="" class="mini">
+                <img src="../images/4.jpg" alt="" class="mini">
+
+            </div>
+
+        </div>
+        <button class="slider-prev">Назад</button>
+        <button class="slider-next">Вперёд</button>
+    </div>
     <script>
-        var arr=['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'],
-        block=document.querySelector('.block'),
-        i=0;
-        block.onclick=boo;
-        boo();
-        function boo(){
-            block.style.backgroundImage='url(../images/'+arr[i]+')';
-            i++;
-            if (i==arr.length){
-                i=0;
-            }
-        }
+        let offset=0;
+        const sliderLine=document.querySelector('.slider-line');
+        document.querySelector('.slider-next').addEventListener('click', function () {
+            offset=offset+256;
+            if (offset>768){ /* сравниваем офф сет с длинной трёх картинок, чтоб возвращать картинки*/
+           offset=0;
+            } 
+            sliderLine.style.left=-offset+ 'px';
+        })
+        document.querySelector('.slider-prev').addEventListener('click', function () {
+            offset=offset-256;
+            if (offset<0){ 
+           offset=768;
+            } 
+            sliderLine.style.left=-offset+ 'px';
+        })
+        
+        
+
+    </script>
 
     </script>
     
@@ -419,36 +435,124 @@ transition: all ease 1s;
         </section> 
         
     </section>
- 
-   
-    </div>
+    <section class="bloc">
+        <h1> Диаграмма "Популярность языков программирования"</h1>
+            <form class="chart_data " action="#" method="POST">
+            <div class="chart_input-group">
+                <label class="chart_label" for="javascript"> JavaScript </label>
+                <input class="chart_input input-field" type="number" name="javascript" id="javascript" min="0" max="100" required>
+                <span>%</span>
+            </div>
+            <div class="chart_input-group">
+                <label class="chart_label" for="php"> PHP </label>
+                <input class="chart_input input-field" type="number" name="php" id="php" min="0" max="100" required>
+                <span>%</span>
+            </div>
+            <div class="chart_input-group">
+                <label class="chart_label" for="python"> PYTHON </label>
+                <input class="chart_input input-field" type="number" name="python" id="python" min="0" max="100" required>
+                <span>%</span>
+            </div>
+            <input class="chart_submit-button input-field" type="submit" value="Показать график ">
+        </form>
+        <div class="chart_canvas-wrapper">
+            <canvas id="canvas" width="500" height="250"> Браузер не поддерживает Canvas </Canvas></canvas>
+        </div>
+        <script>
+           const MAX_PERCENTAGE = 100;
 
+const COLORS = [
+  `#b3d5fc`,
+  `#98d9d9`,
+  `#ede493`
+];
 
+const BarSize = {
+  MAX_HEIGHT: 190,
+  WIDTH: 50
+};
 
-</div>
+const BarCoordinate = {
+  INITIAL_X: 80,
+  INITIAL_Y: 220
+}
 
+const Font = {
+  SIZE: `18px`,
+  FAMILY: `Tahoma`
+};
+
+const LabelCoordinate = {
+  INITIAL_X: 30,
+  INITIAL_Y: 70
+}
+
+const Gap = {
+  HORIZONTAL: 60,
+  VERTICAL: 30
+}
+
+const formElement = document.querySelector(`.chart_data`);
+const inputElements = formElement.querySelectorAll(`.chart_input`);
+
+const getData = (inputElements) => {
+  return Array.from(inputElements).map((input, index) => ({
+    name: input.name,
+    value: input.value,
+    color: COLORS[index]
+  }));
+};
+
+const canvas = document.querySelector(`#canvas`);
+const ctx = canvas.getContext(`2d`);
+
+const renderChart = (items) => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  let currentLabelY = LabelCoordinate.INITIAL_Y;
+  let currentBarX = BarCoordinate.INITIAL_X;
+  const gapBetweenBars = BarSize.WIDTH + Gap.HORIZONTAL;
+
+  for (const item of items) {
+    const barHeight = (item.value * BarSize.MAX_HEIGHT) / MAX_PERCENTAGE;
     
+    ctx.fillStyle = item.color;
+    ctx.font = `${Font.SIZE} ${Font.FAMILY}`;
+    ctx.save();
+    ctx.translate(0, canvas.height);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText(item.name.toUpperCase(), LabelCoordinate.INITIAL_X, currentLabelY);
+    ctx.restore();
+    ctx.fillRect(currentBarX, BarCoordinate.INITIAL_Y, BarSize.WIDTH, -barHeight);
+    
+    currentBarX += gapBetweenBars;
+    currentLabelY += gapBetweenBars;
+  }
+};
 
-        
-    
-        
-       
-    </main>
-    <footer>
-    
-          <div class="footer_wrapper">
- <p class="footer-logoall">
-      <a class="footer_logo" href="https://vk.com/unidubna_official"  > <img src="../images/vk.png"  alt="" width="50"></a>
-      <a class="footer_logo" href="https://www.instagram.com/unidubna_official/"> <img src="../images/instagram.png" alt="" width="50"></a>
-      <a class="footer_logo" href="https://www.youtube.com/c/ТВГУД"> <img src="../images/youtube.png" alt="" width="50"></a>
+formElement.addEventListener(`submit`, (evt) => {
+  evt.preventDefault();
+  renderChart(getData(inputElements));
+  formElement.reset();
+});
+
+</script>
+  
+</main>
+<footer>
+    <div class="footer_wrapper">
+<p class="footer-logoall">
+  <a class="footer_logo" href="https://vk.com/unidubna_official"  > <img src="../images/vk.png"  alt="Вконтакте" width="50"></a>
+  <a class="footer_logo" href="https://www.instagram.com/unidubna_official/"> <img src="../images/instagram.png" alt="Инстаграмм" width="50"></a>
+  <a class="footer_logo" href="https://www.youtube.com/c/ТВГУД"> <img src="../images/youtube.png" alt="YouTube" width="50"></a>
 </p>     
-      
-        <p  class="footer-text">
-          Сайт разработан "программисткой" Катей, Coppyright 2021</p>   
-        
-     
-    </footer>
-    <script>
+  
+    <p  class="footer-text">
+      Сайт разработан "программисткой" Катей, Coppyright 2021</p>   
+    
+ 
+</footer>
+<script>
     document.getElementById('svaz').addEventListener("click",hiddenClose);
     function  hiddenClose () {
         let x=document.getElementById('tel1');
@@ -466,7 +570,6 @@ transition: all ease 1s;
         }
     }
 </script>
-  
     
 </body>
 </html>

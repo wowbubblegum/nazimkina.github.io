@@ -32,7 +32,7 @@ body.theme-dark{
 }
 
 header{background-color: cornsilk; display:  block;}
-.header_wrapper{display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; text-decoration:} 
+.header_wrapper{display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;} 
 
 .header_logo{flex-basis: 8%; height: 100px; align-items: 100%; justify-content: center; display: flex; flex-wrap: wrap;}
 .header_menu{display: flex;flex-wrap: wrap;}
@@ -86,6 +86,50 @@ table{ margin: auto; }
     padding-top: 125px;
 }
 .a_underline{ text-decoration: none;}
-  
+.chart_data{
+    width: 250px;
+}
+.chart_input-group{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20 px;
+}
+.chart_label{
+   max-width: 140px;
+    margin: auto;
+   
+}
+.input-field{
+    font-size: inherit;
+    color: inherit;
+    text-transform:uppercase ;
+    text-align: center; 
 
+    white-space: normal;
+    border: 1px solid rgb(235, 236, 238);
+    border-radius: 5px;
+    background-color: transparent;
+}
+  
+.chart_input {
+    width: 60px;
+    margin-right: 5px;
+}
+.submit_button{
+    width: 100%;
+    padding: 10px;
+  
+    cursor: pointer;
     
+}
+.chart_submit-button {
+    
+color: rgb(144, 147, 196);
+background-color: rgb(216, 216, 216);
+}
+.chart_canvas-wrapper{
+    height: 250px;
+  border: 1px solid #b3d5fc;
+  border-radius: 5px;
+}
