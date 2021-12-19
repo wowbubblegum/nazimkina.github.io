@@ -554,23 +554,25 @@ formElement.addEventListener(`submit`, (evt) => {
  
 </footer>
 <script>
-    document.getElementById('svaz').addEventListener("click",hiddenClose);
-    function  hiddenClose () {
-        let x=document.getElementById('tel1');
-        let y= document.getElementById('email1');
-        if (document.getElementById('posta').checked){
-            y.style.visibility='visible';
-
-        } else{
-            y.style.visibility='hidden';
-        }
-        if (document.getElementById('tel').checked){
-            x.style.visibility='visible';
-        } else{
-            x.style.visibility='hidden';
-        }
+    document.getElementById('posta').addEventListener("click", hiddenClose);
+    document.getElementById('tel').addEventListener("click", hiddenClose);
+    document.getElementById('nootv').addEventListener("click", hiddenClose);
+    
+    function hiddenClose () {
+    let telDiv = document.getElementById('tel1');
+    let emailDiv = document.getElementById('email1');
+    emailDiv.style.visibility='visible';
+    telDiv.style.visibility='visible';
+    if (document.getElementById('posta').checked){
+    telDiv.style.visibility='hidden';
+    } else if (document.getElementById('tel').checked){
+    emailDiv.style.visibility='hidden';
+    } else if(document.getElementById('nootv').checked)
+    { emailDiv.style.visibility='hidden';
+    telDiv.style.visibility='hidden';
     }
-</script>
+    }
+    </script>
     
 </body>
 </html>
