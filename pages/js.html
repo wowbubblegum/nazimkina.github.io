@@ -158,37 +158,37 @@ transition: all ease 1s;
 }
 
     </style>
-    <script>
-        function checkForm () {
-        
-        console.log("Проверка");
-        
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var tel = document.getElementById('tel').value;
-        
-        console.log(name);
-        
-        var fail="";
-        var viv=name + " " + email + " " + tel;
-        
-        if (name=="" ||email==""||tel=="")
-        fail="Заполните все поля";
-        else if(name.length<=1|| name.length>30)
-        fail="Введите корректное имя";
-        else if(tel.length>10)
-        fail="Некорректный номер телефона";
-        
-        if (fail !=""){
-        
-        document.getElementById('error').innerHTML=fail;
-        } else{
-        document.getElementById('vivod').innerHTML=viv;
-        }
-        return false;
-        }
-        </script>
-        
+<script>
+    function checkForm () {
+    
+    console.log("Проверка");
+    
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var tel = document.getElementById('tel').value;
+    
+    console.log(name);
+    
+    var fail="";
+    var viv=name + " " + email + " " + tel;
+    
+    if (name=="" ||email==""||tel=="")
+    fail="Заполните все поля";
+    else if(name.length<=1|| name.length>30)
+    fail="Введите корректное имя";
+    else if(tel.length>10)
+    fail="Некорректный номер телефона";
+    
+    if (fail !=""){
+    
+    document.getElementById('error').innerHTML=fail;
+    } else{
+    document.getElementById('vivod').innerHTML=viv;
+    }
+    return false;
+    }
+    </script>
+    
 
     <script>
         function fanc(){
