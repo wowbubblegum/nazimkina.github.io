@@ -36,7 +36,7 @@ header{background-color: cornsilk; display:  block;}
 
 .header_logo{flex-basis: 8%; height: 100px; align-items: 100%; justify-content: center; display: flex; flex-wrap: wrap;}
 .header_menu{display: flex;flex-wrap: wrap;}
-.header_item{margin-right: 30px;  border-width: 2px; text-decoration:none; border-left-style: solid; color:rgb(15, 37, 37) ;}
+.header_item{margin-right: 30px;  border-width: 2px; text-decoration:none; border-left-style: solid; color:rgb(142, 207, 207) ;}
 .footer_wrapper{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;height: 100px;  background: rgb(25, 42, 43);}
 .footer-logoall{ margin-left: 300px;}
 .footer-text {margin-right: 500px;}
