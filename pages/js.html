@@ -160,40 +160,35 @@ transition: all ease 1s;
     </style>
     <script>
         function checkForm () {
-
         
         console.log("Проверка");
-
-        var name =document.getElementById('name').value;
+        
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var tel = document.getElementById('tel').value;
+        
         console.log(name);
+        
         var fail="";
-        var viv=name.value + " " + email.value + " " + tel.value;
-        var tel = document.getElementById('tel');
-        if (name=="" ||email==""||tel=="") 
-            fail="Заполните все поля";
+        var viv=name + " " + email + " " + tel;
+        
+        if (name=="" ||email==""||tel=="")
+        fail="Заполните все поля";
         else if(name.length<=1|| name.length>30)
-            fail="Введите корректное имя";
+        fail="Введите корректное имя";
         else if(tel.length>10)
-             fail="Некорректный номер телефона";
-             
-            
+        fail="Некорректный номер телефона";
         
-         if (fail !=""){
+        if (fail !=""){
         
-            document.getElementById('error').innerHTML=fail;
-            
+        document.getElementById('error').innerHTML=fail;
         } else{
-            document.getElementById('vivod').innerHTML=viv;
-            
-            
+        document.getElementById('vivod').innerHTML=viv;
         }
-
-       return false;
-
+        return false;
+        }
+        </script>
         
-    }
-    
-    </script>
 
     <script>
         function fanc(){
