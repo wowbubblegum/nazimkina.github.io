@@ -42,8 +42,8 @@ header{background-color: cornsilk; display:  block;}
 .footer-text {margin-right: 500px;}
 .footer_logo {margin-right: 30px; }
 .header_nav{ height: 100px; align-items: center; justify-content: center; display: flex; flex-wrap: wrap; color: rgb(10, 8, 5);}
-.wrapper {display: grid;grid-template-columns: repeat(2, 1fr); justify-content: center; align-items: center; background-color: antiquewhite} 
-.item { grid-column: span 1  ; grid-column-end:auto ; margin-bottom: 20 px; margin-left: 150px; text-decoration: none;
+.wrapper {display: grid;grid-template-columns: repeat(2, 1fr) /* */; justify-content: center; align-items: center; background-color: antiquewhite} 
+.item { grid-column: span 1 /* охват одной колонки*/  ; grid-column-end:auto ; margin-bottom: 20 px; margin-left: 150px; text-decoration: none;
  }
 
 .html-cards { display: grid; grid-template-columns: repeat(3,1fr); color: rgb(7, 44, 42);} 
@@ -64,11 +64,8 @@ header{background-color: cornsilk; display:  block;}
 .oneul{ grid-column: span 1;
     grid-column-start: span 1;
     grid-column-end: auto;
-    margin: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin: 10px; /* отступ от всех четырёх сторо */
+    
 
 }
 table{ margin: auto; }
