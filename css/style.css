@@ -32,11 +32,11 @@ body.theme-dark{
 }
 
 header{background-color: cornsilk; display:  block;}
-.header_wrapper{display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;} 
+.header_wrapper{display: flex; flex-wrap: wrap /* элементы, которые не поместились в первой строке, переносятся на вторую*/; align-items: flex-end /*выравнивание по второстепенной*/; justify-content: space-between; /*одинаковое расстояние элементов контейнера*/} 
 
 .header_logo{flex-basis: 8%; height: 100px; align-items: 100%; justify-content: center; display: flex; flex-wrap: wrap;}
 .header_menu{display: flex;flex-wrap: wrap;}
-.header_item{margin-right: 30px;  border-width: 2px; text-decoration:none; border-left-style: solid; color:rgb(142, 207, 207) ;}
+.header_item{margin-right: 30px;; border-width: 2px; text-decoration:none; border-left-style: solid; color:rgb(142, 207, 207) ;}
 .footer_wrapper{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;height: 100px;  background: rgb(25, 42, 43);}
 .footer-logoall{ margin-left: 300px;}
 .footer-text {margin-right: 500px;}
@@ -85,7 +85,7 @@ table{ margin: auto; }
     padding-left: 650px;
     padding-top: 125px;
 }
-.a_underline{ text-decoration: none;}
+.a_underline{ text-decoration: none; color: rgb(71, 187, 216);}
 .chart_data{
     width: 250px;
 }
@@ -103,7 +103,7 @@ table{ margin: auto; }
 .input-field{
     font-size: inherit;
     color: inherit;
-    text-transform:uppercase ;
+    text-transform:uppercase ; /*буквы верхнего регистра*/
     text-align: center; 
 
     white-space: normal;
